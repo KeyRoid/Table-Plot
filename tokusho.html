@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ja" data-lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TablePlot | Commercial Disclosure</title>
+  <meta name="description" content="TablePlot Commercial Disclosure (JP/EN)." />
+  <style>
+    :root{--bg:#0c0c0e;--panel:#121214;--text:#f2f2f3;--muted:#b6b6ba;--line:rgba(255,255,255,.12);--accent:#8aa6ff;}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans JP",sans-serif;line-height:1.8}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 64px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0 18px;border-bottom:1px solid var(--line);margin-bottom:18px}
+    h1{font-size:20px;margin:0}
+    .top{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .lang{display:flex;gap:8px}
+    button{background:transparent;border:1px solid var(--line);color:var(--text);padding:8px 12px;border-radius:10px;cursor:pointer;font-size:13px}
+    button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin:14px 0}
+    h2{font-size:16px;margin:0 0 8px}
+    table{width:100%;border-collapse:collapse}
+    th,td{border-top:1px solid var(--line);padding:10px 8px;vertical-align:top}
+    th{width:32%;text-align:left;color:var(--muted);font-weight:600}
+    .muted{color:var(--muted);font-size:13px}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="top">
+        <a href="./index.html">← Legal Home</a>
+        <h1>Commercial Disclosure</h1>
+      </div>
+      <div class="lang" role="group" aria-label="Language switch">
+        <button id="btn-ja" type="button" aria-pressed="true">日本語</button>
+        <button id="btn-en" type="button" aria-pressed="false">English</button>
+      </div>
+    </header>
+
+    <section id="sec-ja">
+      <div class="card">
+        <h2>特定商取引法に基づく表記</h2>
+        <p class="muted">最終更新日：<span id="date-ja"></span></p>
+        <table>
+          <tr><th>販売事業者</th><td><strong>[YOUR_NAME_OR_ENTITY]</strong></td></tr>
+          <tr><th>運営責任者</th><td><strong>[RESPONSIBLE_PERSON]</strong></td></tr>
+          <tr><th>所在地</th><td><strong>[ADDRESS]</strong><br/><span class="muted">※「請求があった場合に遅滞なく開示します」等、運用に合わせて記載してください</span></td></tr>
+          <tr><th>連絡先</th><td><strong>[SUPPORT_EMAIL]</strong><br/><span class="muted">※電話番号は「請求があった場合に遅滞なく開示」等の運用も可</span></td></tr>
+          <tr><th>販売価格</th><td>各ストア（Google Play / App Store）上の表示価格に準じます</td></tr>
+          <tr><th>商品代金以外の必要料金</th><td>インターネット接続料金、通信料等はユーザー負担となります</td></tr>
+          <tr><th>提供時期</th><td>購入手続き完了後、直ちに利用可能です</td></tr>
+          <tr><th>お支払い方法</th><td>各ストアが定める決済方法に従います</td></tr>
+          <tr><th>お支払い時期</th><td>各ストアの規定に従います</td></tr>
+          <tr><th>返品・キャンセル</th><td>デジタル商品の性質上、原則として返品・キャンセルはできません。例外的な取扱いは各ストアの返金ポリシーに従います</td></tr>
+          <tr><th>動作環境</th><td>各ストアの配信ページに記載の動作環境をご確認ください</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section id="sec-en" class="hidden">
+      <div class="card">
+        <h2>Commercial Disclosure</h2>
+        <p class="muted">Last updated: <span id="date-en"></span></p>
+        <table>
+          <tr><th>Seller</th><td><strong>[YOUR_NAME_OR_ENTITY]</strong></td></tr>
+          <tr><th>Responsible person</th><td><strong>[RESPONSIBLE_PERSON]</strong></td></tr>
+          <tr><th>Address</th><td><strong>[ADDRESS]</strong><br/><span class="muted">You may disclose upon request depending on your operation policy.</span></td></tr>
+          <tr><th>Contact</th><td><strong>[SUPPORT_EMAIL]</strong><br/><span class="muted">Phone number may be disclosed upon request depending on your policy.</span></td></tr>
+          <tr><th>Price</th><td>As displayed on the store listing (Google Play / App Store)</td></tr>
+          <tr><th>Additional fees</th><td>Internet connection fees and data charges are borne by the user</td></tr>
+          <tr><th>Delivery</th><td>Available immediately after purchase is completed</td></tr>
+          <tr><th>Payment methods</th><td>As provided by the store</td></tr>
+          <tr><th>Payment timing</th><td>According to the store’s rules</td></tr>
+          <tr><th>Returns / Cancellations</th><td>Due to the nature of digital products, returns/cancellations are generally not accepted. Exceptions follow the store’s refund policy</td></tr>
+          <tr><th>System requirements</th><td>Please check the system requirements on the store listing</td></tr>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const secJa = document.getElementById('sec-ja');
+    const secEn = document.getElementById('sec-en');
+    const btnJa = document.getElementById('btn-ja');
+    const btnEn = document.getElementById('btn-en');
+
+    function setLang(lang){
+      document.documentElement.setAttribute('lang', lang);
+      const isJa = lang === 'ja';
+      secJa.classList.toggle('hidden', !isJa);
+      secEn.classList.toggle('hidden', isJa);
+      btnJa.setAttribute('aria-pressed', String(isJa));
+      btnEn.setAttribute('aria-pressed', String(!isJa));
+      try { localStorage.setItem('tableplot_lang', lang); } catch(e) {}
+    }
+    btnJa.addEventListener('click', () => setLang('ja'));
+    btnEn.addEventListener('click', () => setLang('en'));
+    const saved = (() => { try { return localStorage.getItem('tableplot_lang'); } catch(e) { return null; } })();
+    if (saved === 'en' || saved === 'ja') setLang(saved);
+
+    const now = new Date();
+    document.getElementById('date-ja').textContent = now.toISOString().slice(0,10);
+    document.getElementById('date-en').textContent = now.toISOString().slice(0,10);
+  </script>
+</body>
+</html>
